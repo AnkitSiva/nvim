@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/repos')
     Plug 'neovim/nvim-lspconfig'
 " Autocomplete plugins
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
