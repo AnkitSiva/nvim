@@ -75,9 +75,10 @@ require'lspconfig'.jsonls.setup {
     capabilities = capabilities
     }
 
-
-require'lspconfig'.pylsp.setup {
-    cmd = require'lspcontainers'.command('pylsp'),
+--require'lspconfig'.pylsp.setup {
+--  capabilities = capabilities
+--}
+require'lspconfig'.pyright.setup {
     capabilities = capabilities
     }
 
