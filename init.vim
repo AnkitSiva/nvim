@@ -37,14 +37,25 @@ syntax on
 
 source $NVIM_CONFIG_DIR/cmp_options.vim
 
-set t_Co=256
-colorscheme Tomorrow-Night
+" Inspect $TERM instad of t_Co as it works in neovim as well
+if &term =~ '256color'
+    " Enable true (24-bit) colors instead of (8-bit) 256 colors.
+    " :h true-color
+    if has('termguicolors')
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        set termguicolors
+    endif
+    colorscheme Gruvbox
+else
+    colorscheme Tomorrow-Night
+endif
 
 au BufRead,BufNewfile Dockerfile* setfiletype Dockerfile
 
 if executable("rg")
-	set grepprg=rg\ --vimgrep\ --no-heading
-	set grepformat=%f:%l:%c:%m,%f:%l:%m
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
 " To close vim when nerdTree is the only window open
@@ -58,28 +69,28 @@ lua << EOF
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local util = require'lspconfig/util'
 require'lspconfig'.bashls.setup {
-  cmd = require'lspcontainers'.command('bashls'),
-  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
-  capabilities = capabilities
-}
+    cmd = require'lspcontainers'.command('bashls'),
+    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+    capabilities = capabilities
+    }
 
 require'lspconfig'.dockerls.setup {
-  cmd = require'lspcontainers'.command('dockerls'),
-  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
-  capabilities = capabilities
-}
+    cmd = require'lspcontainers'.command('dockerls'),
+    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+    capabilities = capabilities
+    }
 
 require'lspconfig'.jsonls.setup {
-  cmd = require'lspcontainers'.command('jsonls'),
-  root_dir = util.root_pattern(".git", vim.fn.getcwd()),
-  capabilities = capabilities
-}
+    cmd = require'lspcontainers'.command('jsonls'),
+    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+    capabilities = capabilities
+    }
 
 
 require'lspconfig'.pylsp.setup {
     cmd = require'lspcontainers'.command('pylsp'),
     capabilities = capabilities
-}
+    }
 EOF
 
 
