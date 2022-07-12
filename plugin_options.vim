@@ -8,6 +8,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['Dockerfile.+'] = 'ue7b0'
 let g:vsnip_filetypes = {}
 let g:vsnip_filetypes.python = ['python']
+let g:vsnip_filetypes.kotlin = ['kotlin']
 " let g:pencil#conceallevel = 0 
 " augroup pencil
 "   autocmd!
