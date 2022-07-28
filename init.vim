@@ -32,24 +32,13 @@ set expandtab
 set tabstop=4
 set path+=**
 set omnifunc=v:lua.vim.lsp.omnifunc
+set background=dark
+set termguicolors
 set completeopt=menu,menuone,noselect
-syntax on
 
 source $NVIM_CONFIG_DIR/cmp_options.vim
 
-" Inspect $TERM instad of t_Co as it works in neovim as well
-if &term =~ '256color'
-    " Enable true (24-bit) colors instead of (8-bit) 256 colors.
-    " :h true-color
-    if has('termguicolors')
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-        set termguicolors
-    endif
-    colorscheme Gruvbox
-else
-    colorscheme Tomorrow-Night
-endif
+colorscheme one-nvim
 
 au BufRead,BufNewfile Dockerfile* setfiletype Dockerfile
 
@@ -91,6 +80,51 @@ require'lspconfig'.pylsp.setup {
     cmd = require'lspcontainers'.command('pylsp'),
     capabilities = capabilities
     }
+
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "python", "kotlin", "bash", "dockerfile", "java", "latex", "lua"},
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  ignore_install = {},
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    disable = {},
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+
+  indent = {
+    enable = true
+  }
+}
 EOF
 
 

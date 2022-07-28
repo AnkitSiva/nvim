@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/repos')
     Plug 'reedes/vim-pencil'
 	Plug 'reedes/vim-wordy'
 " Making vim pretty
-	Plug 'flazz/vim-colorschemes'
+    Plug 'Th3Whit3Wolf/one-nvim'
 	Plug 'mhinz/vim-startify'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
