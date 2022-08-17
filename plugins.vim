@@ -18,10 +18,6 @@ call plug#begin('~/.config/nvim/repos')
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
     Plug 'rafamadriz/friendly-snippets'
-" Writing plugins
-	Plug 'davidbeckingsale/writegood.vim'
-    Plug 'reedes/vim-pencil'
-	Plug 'reedes/vim-wordy'
 " Making vim pretty
     Plug 'Th3Whit3Wolf/one-nvim'
 	Plug 'mhinz/vim-startify'
