@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 	use 'tpope/vim-fugitive'
 
-	use { 
+	use {
 		'neovim/nvim-lspconfig',
 		requires = {
 			-- Personal lsp containers repo
@@ -52,6 +52,10 @@ return require('packer').startup(function(use)
 			{use 'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*'},
 			-- Get a lil lightbulb for when you have bad code
 			{use 'kosayoda/nvim-lightbulb'},
+            -- LSP status
+            {use 'j-hui/fidget.nvim'},
+            -- Lua LSP improvement
+            {use 'folke/neodev.nvim'}
 		}
 	}
 end)
