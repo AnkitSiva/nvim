@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -114,10 +119,20 @@ _G.packer_plugins = {
     path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lsp_lines.nvim"] = {
+    loaded = true,
+    path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/lsp_lines.nvim",
+    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  },
   ["lspcontainers.nvim"] = {
     loaded = true,
     path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/lspcontainers.nvim",
     url = "https://github.com/ankitsiva/lspcontainers.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -169,6 +184,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/ankitsiv/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-vsnip"] = {
     loaded = true,
