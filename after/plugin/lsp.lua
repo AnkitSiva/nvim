@@ -63,7 +63,14 @@ require'lspconfig'.pyright.setup {
     on_attach = on_attach,
 }
 
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.rust_analyzer.setup {
+    cmd = require'lspcontainers'.command('rust_analyzer'),
+    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+require'lspconfig'.lua_ls.setup {
 	cmd = require'lspcontainers'.command('sumneko_lua'),
 	on_new_config = (function(new_config, new_root_dir)
 		new_config.cmd = require'lspcontainers'.command(server, { root_dir = new_root_dir })

@@ -61,5 +61,6 @@ return require('packer').startup(function(use)
 
     use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
+    use 'mfussenegger/nvim-dap'
 
 end)
