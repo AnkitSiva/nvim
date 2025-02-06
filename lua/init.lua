@@ -1,1 +1,3 @@
-require("lua.remaps")
+require('remaps')
+require('set')
+require('config.lazy')

@@ -1,2 +1,3 @@
-require('set')
 require('remaps')
+require('set')
+require('config.lazy')

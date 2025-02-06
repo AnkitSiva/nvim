@@ -33,3 +33,4 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 vim.o.completeopt = 'menuone,noselect'
+vim.api.nvim_set_option("clipboard","unnamed")
