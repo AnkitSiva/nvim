@@ -12,5 +12,9 @@ return {
     'mfussenegger/nvim-jdtls',
 
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+
+    'folke/lazydev.nvim',
+
+    'github/copilot.vim',
 }
 
